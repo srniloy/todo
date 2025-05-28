@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: django-todo-app
+    name: todo-app
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn todoproject.wsgi:application"
+    startCommand: "gunicorn todo.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
