@@ -28,7 +28,6 @@ SECRET_KEY = 'django-insecure-e=20!9@-iwife$6h!2n6qdav^56$iytgf$3_q(x1)5jn6nzx=7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -138,3 +137,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'task_list'
 LOGOUT_REDIRECT_URL = 'login'
+
+
+ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = [
+    'todo-xamf.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)

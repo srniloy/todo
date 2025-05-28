@@ -14,7 +14,9 @@ services:
       - key: DEBUG
         value: "False"
       - key: ALLOWED_HOSTS
-        value: "your-app-name.onrender.com"
+        value: "todo-xamf.onrender.com"
+      - key: RENDER_EXTERNAL_HOSTNAME
+        value: ${RENDER_SERVICE_NAME}.${RENDER_EXTERNAL_HOSTNAME}
 databases:
   - name: tododb
     plan: free
